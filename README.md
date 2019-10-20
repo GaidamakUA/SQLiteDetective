@@ -3,7 +3,7 @@ A detective game inspired by IBM's the IDS Detective Game.
 
 # Game scenario
 You are an intern working in a security department for a large enterprise. As part of your training, you have been asked to participate in a crime investigation simulation to help locate a missing thinkpad laptop.
-![Screenshot](/screenshots/Screenshot.png)
+![Screenshot](/screenshots/screenshot.png)
 
 # Written with
 * [Godot engine](https://github.com/godotengine/godot)
