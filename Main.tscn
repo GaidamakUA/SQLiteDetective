@@ -1,0 +1,685 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://assets/main_theme.tres" type="Theme" id=2]
+[ext_resource path="res://TextOutput.gd" type="Script" id=3]
+[ext_resource path="res://assets/game_1.jpg" type="Texture" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 23.0
+
+[node name="ShowDatabaseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 265.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 62.7073, 12.9709 )
+text = "Show Database structure"
+
+[node name="ShowCluesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 269.0
+margin_right = 391.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 62.7073, 12.9709 )
+text = "Show clues"
+
+[node name="TutorialButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 395.0
+margin_right = 539.0
+margin_bottom = 23.0
+text = "SQL Tutorial"
+
+[node name="AboutButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 357.0
+margin_right = 419.0
+margin_bottom = 23.0
+text = "About"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 27.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 565.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 1008.0
+margin_bottom = 17.0
+theme = ExtResource( 2 )
+text = "SQL Console"
+
+[node name="TextInput" type="TextEdit" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 21.0
+margin_right = 1008.0
+margin_bottom = 263.0
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+show_line_numbers = true
+wrap_enabled = true
+
+[node name="RunButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 267.0
+margin_right = 1008.0
+margin_bottom = 290.0
+theme = ExtResource( 2 )
+text = "Run SQL"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 294.0
+margin_right = 1008.0
+margin_bottom = 311.0
+theme = ExtResource( 2 )
+text = "Output"
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 315.0
+margin_right = 1008.0
+margin_bottom = 557.0
+size_flags_vertical = 3
+
+[node name="Output" type="RichTextLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+selection_enabled = true
+script = ExtResource( 3 )
+
+[node name="DatabasePopup" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.5
+margin_top = -198.5
+margin_right = 206.5
+margin_bottom = 198.5
+theme = ExtResource( 2 )
+window_title = "Database"
+
+[node name="TextureRect" type="TextureRect" parent="DatabasePopup"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+stretch_mode = 5
+
+[node name="CluesPopup" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -420.084
+margin_top = -248.5
+margin_right = 418.916
+margin_bottom = 248.5
+theme = ExtResource( 2 )
+window_title = "Clues"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CluesPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CluesPopup/MarginContainer"]
+margin_right = 823.0
+margin_bottom = 481.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[color=yellow]Clue Number 1[/color]
+Security has confirmed that only employees (that is, no visitors) left the building with any hardware on the date that the thinkpad went missing.
+
+[color=yellow]Clue Number 2[/color]
+Security has confirmed that the thinkpad went missing on July 4, 2003. (Hint: Determine the complete list of potential suspects by joining two tables.)
+
+[color=yellow]Clue Number 3[/color]
+The suspect signed out of the building between 4 p.m. and 7 p.m.
+
+[color=yellow]Clue Number 4[/color]
+Video surveillance tapes show that only males exited the building carrying thinkpad cases between 4 p.m. and 7 p.m. on July 4, 2003
+
+[color=yellow]Clue Number 5[/color]
+The suspect has brown hair.
+
+[color=yellow]Clue Number 6[/color]
+The call reporting the missing thinkpad was placed from extension 5555. (Hint: This is not the person who took the missing Thinkpad, but you will need information from the results later in the game.)
+
+[color=yellow]Clue Number 7[/color]
+A thinkpad with the same TYPE number as that of the missing machine was found during an inventory audit in room X-2111 which is a restricted access area."
+text = "Clue Number 1
+Security has confirmed that only employees (that is, no visitors) left the building with any hardware on the date that the thinkpad went missing.
+
+Clue Number 2
+Security has confirmed that the thinkpad went missing on July 4, 2003. (Hint: Determine the complete list of potential suspects by joining two tables.)
+
+Clue Number 3
+The suspect signed out of the building between 4 p.m. and 7 p.m.
+
+Clue Number 4
+Video surveillance tapes show that only males exited the building carrying thinkpad cases between 4 p.m. and 7 p.m. on July 4, 2003
+
+Clue Number 5
+The suspect has brown hair.
+
+Clue Number 6
+The call reporting the missing thinkpad was placed from extension 5555. (Hint: This is not the person who took the missing Thinkpad, but you will need information from the results later in the game.)
+
+Clue Number 7
+A thinkpad with the same TYPE number as that of the missing machine was found during an inventory audit in room X-2111 which is a restricted access area."
+
+[node name="ScenarioDialog" type="AcceptDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -159.5
+margin_top = -104.0
+margin_right = 159.5
+margin_bottom = 104.0
+theme = ExtResource( 2 )
+window_title = "Game scenario"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScenarioDialog"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 311.0
+margin_bottom = 169.0
+bbcode_enabled = true
+bbcode_text = "You are an intern working in a security department for a large enterprise. As part of your training, you have been asked to participate in a crime investigation simulation to help locate a missing [i]thinkpad[/i] laptop."
+text = "You are an intern working in a security department for a large enterprise. As part of your training, you have been asked to participate in a crime investigation simulation to help locate a missing thinkpad laptop."
+
+[node name="TutorialPopup" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -358.5
+margin_top = -245.5
+margin_right = 358.5
+margin_bottom = 245.5
+theme = ExtResource( 2 )
+window_title = "Tutorial"
+
+[node name="MarginContainer" type="MarginContainer" parent="TutorialPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TutorialPopup/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 717.0
+margin_bottom = 483.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "The information in this section provides an overview of what a database is, a brief history of databases, and instructions on how to start and play the IDS detective game. In the game, you will be given a problem and a series of clues about how to solve the problem using SQL queries. The queries are run against a preinstalled database and get progressively more complex as the game proceeds. Answers are provided at the end of this section.
+
+Play the SQLiteDetective Game to help you get used to the Informix SQL language and to familiarize yourself with the [color=yellow]dbaccess[/color] SQL tool. And oh yes, to have fun!
+
+[color=red]What is a Database?[/color]
+
+A database is a collection of data (values) stored in tables, where each table consists of columns (fields) and rows (records)
+
+A database can be compared to a filing cabinet:
+* Database = filing cabinet
+* Table = file folder within the cabinet
+* Value = data stored in each cell of a spreadsheet of rows (records) and columns (fields) within the file folder
+
+Both the filing cabinet and database provide you with a way to manage and organize data so that it can be quickly retrieved. However, because the database is automated it shortens the time required to search for data, sort data, add to the data, delete from the data, and edit the data.
+
+With a relational database, such as IBM® Informix Dynamic Server, data is organized and accessed according to relationships defined between data items within the various tables. Data in the tables can be managed using the SQL (Structured Query Language) programming language.
+
+The Apple iPod is an example of a database. The Apple iPod uses a database to store all of your Music, Photos, etc.:
+* Database: Entire Music Folder
+* Tables: Artist Folders (grouped by artist)
+* Values: Album Names, Song Names, etc.
+
+[color=red]The History of Databases[/color]
+
+* 1970 - IBM invents the database E. F. Codd of IBM Research publishes a paper entitled “A Relational Model of Data for Large Shared Data Banks,” leading to a new way for computers to manage information.
+* 1974 - IBM invents the database programming language SEQUEL (or SQL for short).
+* Don Chamberlin and Ray Boyce publish \"SEQUEL: A Structured English Query Language.\"
+* 1970 to the present - IBM offers a complete family of relational database management systems (RDBMS) software
+  Databases are used across all industries to manage everything from your credit card use, to bank accounts, to car insurance, to store purchases.
+
+[color=red]Playing the IDS Detective Game[/color]
+
+Today you are going to learn about database technology by playing a fun and interactive game called “The IDS Detective Game.” This game will enable you to:
+
+* Understand how database data is stored and to gain an understanding of database concepts such as tables, rows (records), columns (fields), and values
+* Learn about relational databases and table joins
+* Gain a working knowledge of some of the primary SQL statements:
+  * SELECT
+  * UPDATE
+  * INSERT
+  * DELETE
+
+The IDS Detective Game consists of four tables:
+* [color=yellow]employee[/color] table stores information about each employee such as their employee number, name, manager, office number, phone number, and badge number, and so on.
+* [color=yellow]security[/color] table stores information as to when each employee or visitor badged in and out of the building (date and time).
+* [color=yellow]lobby[/color] table stores the badge number assigned to each visitor by name.
+* [color=yellow]hardware[/color] table stores the serial number and type number for every computer along with its location and the ID of the employee who is its primary user.
+
+Relationships between tables in a relational database are established using [color=yellow]keys[/color]. The relationships defined between the tables of the IDS Detective Game are shown in the diagram. Arrows indicate the fields that have keys associated with them and the relationships that were defined between the tables. You will need to use these keys when joining the tables.
+This image shows the four tables and the relationships between them.
+
+[color=red]Instructions[/color]
+
+[color=yellow]Tips[/color]
+* Note the format of data in the tables
+  * gender field contains a single uppercase letter (M or F)
+  * hair_colour field contains lowercase entries only (brown, black, blonde, or red)
+  * restricted_access field contains a single uppercase letter (Y or N)
+  * sign_out_time and sign_in_time fields use a 24-hour format (e.g., 14:00:00)
+  * sign_out_date field uses year-month–day format (e.g., 2007-11-07)
+* The * in place of the column name(s) of the SQL query is equal to identifying all column names
+[color=gray]
+  SELECT *
+  FROM lobby
+[/color]
+The above query selects all columns from the lobby table.
+* AND is used to create compound conditions in a SELECT statement
+[color=gray]
+  SELECT * 
+  FROM employee 
+  WHERE employee.manager_id = ‘278354' AND employee.gender = ‘M'
+[/color]
+
+[color=yellow]The Employee Table[/color]
+In the employee table, the columns (or fields) are: [color=yellow]employee_id, first_name, last_name, location, manager_id, extension, gender, hair_colour, badge_number, restricted_access[/color].
+
+[color=yellow]The Security Table[/color]
+In the security table, the columns (or fields) are: [color=yellow]badge_number, sign_out_date, sign_out_time, sign_in_time[/color].
+
+[color=yellow]The Lobby Table[/color]
+In the lobby table, the columns (or fields) are: [color=yellow]first_name, last_name, badge_number[/color].
+
+[color=yellow]The hardware table[/color]
+In the hardware table, the columns (or fields) are: [color=yellow]employee_id, location, hardware_tn, hardware_sn[/color].
+
+[color=yellow]SQL Statements[/color]
+The language of relational database technology is the Structured Query Language (SQL). Invented by IBM in the 1970s, the SQL language continues to evolve and is the only way to access relational database data.
+
+This tutorial will introduce you to the following primary SQL statements:
+* SELECT - queries data from one or more tables
+* UPDATE - changes existing rows in a table
+* INSERT - adds data to a table
+* DELETE - removes rows from a table
+
+The following sections describe each of these SQL statements so you will have all of the information needed to play the IDS Detective Game.
+
+The SELECT Statement
+
+The SELECT statement is used to retrieve data. The format of this statement is:
+[color=gray]
+  SELECT  column name(s) 
+  FROM  table name(s) 
+  WHERE  conditions for rows to meet (if any)
+[/color]
+
+For example, to select all of the rows from the lobby table, issue the following command:
+[color=gray]
+  SELECT *   
+  FROM lobby
+[/color]
+
+To select all of the rows and columns from the lobby table where the visitor's badge number is greater than 62, issue the following statement:
+[color=gray]
+  SELECT * 
+  FROM lobby  
+  WHERE lobby.badge_number > ‘V0062' 
+[/color]
+  
+To select all of the rows and columns from the employee table where the employee reports to Claudinei Santana (hint: employee id = 278354), and the employee is male:
+[color=gray]
+  SELECT * 
+  FROM employee  
+  WHERE employee.manager_id = ‘278354' AND employee.gender = ‘M' 
+[/color]
+
+This image shows the output of the select statement.
+
+Note: In order to see the output in a tabular format as shown here, use the following syntax:
+[color=gray]
+  SELECT employee_id, first_name, last_name, location, manager_id FROM employee
+  WHERE employee.manager_id = ‘278354' AND employee.gender = ‘M'
+[/color]
+
+The SELECT statement will take any number of relational operators including: =, >, <, >=, <=, <> (not equal to) The SELECT statement can also take a number of predicates including:
+* [color=yellow]LIKE[/color] and [color=yellow]NOT LIKE[/color]
+* [color=yellow]IS NULL[/color] and [color=yellow]IS NOT NULL[/color]
+* [color=yellow]BETWEEN[/color] and [color=yellow]NOT BETWEEN[/color]
+* [color=yellow]IN[/color] and [color=yellow]NOT IN[/color]
+
+In the IDS Detective Game, you will use the BETWEEN predicate.
+
+[color=yellow]The BETWEEN Predicate[/color]
+The BETWEEN predicate compares a single value to an inclusion range of values (that is, all values between a specified maximum value and minimum value).
+
+For example, to select all of the rows and columns from the lobby table where the visitor's badge number is between 59 and 66, issue the following statement:
+[color=gray]
+  SELECT * 
+  FROM lobby  
+  WHERE lobby.badge_number BETWEEN ‘V0059' AND ‘V0066' 
+[/color]
+
+[color=yellow]The UPDATE Statement[/color]
+The UPDATE statement is used to change data in a table. With this statement, you can change the value of one or more columns for each row that satisfies the search condition of the WHERE clause. The format is:
+
+UPDATE  table name 
+SET  column name =  expression  
+WHERE  conditions for rows to meet (if any)
+
+Note: if you do not use the WHERE clause, all rows will be updated.
+
+For example, to change the first name of the visitor having badge number 58 to \"Joan\", issue the following statement:
+[color=gray]
+  UPDATE lobby 
+  SET first_name = 'Joan'   
+  WHERE lobby.badge_number = 'V0058'
+[/color]
+
+If you had omitted the WHERE clause on the previous SQL command and issued the following command instead, all records would have been updated:
+[color=gray]
+  UPDATE lobby
+  SET first_name = 'Joan'
+[/color]
+
+[color=yellow]The INSERT Statement[/color]
+The INSERT statement is used to add data to a table. The format of this statement is:
+
+[color=gray]
+  INSERT INTO  tablename (column name(s))   
+  VALUES  (value(s));
+[/color]
+
+To add a visitor named “IDS Detective\" to the lobby table, issue this command:
+[color=gray]
+  INSERT INTO lobby (first_name, last_name, badge_number)
+  VALUES (‘IDS', 'DETECTIVE', 'V0062')
+[/color]
+
+Note: This insertion is the 11th record of the lobby table and the table now has two records with badge_number = ‘V0062'
+
+The DELETE Statement
+
+Use the DELETE statement to remove records (rows) from a table. The format is:
+
+DELETE FROM  table name  
+WHERE  conditions for rows to meet (if any)
+
+For example, to remove the record for the visitor with a last name of Detective from the lobby table, issue the following statement:
+[color=gray]
+  DELETE FROM lobby  
+  WHERE lobby.last_name = ‘Detective'
+[/color]
+
+Note: Following this deletion there are only 10 records in the lobby table and only one record with badge_number = ‘V0062'.
+
+[color=yellow]Joining Tables[/color]
+The process of combining data from two or more tables is called joining tables. The columns involved in the join condition do not have to be identical; however, they must be compatible. To join the lobby table to the security table, issue the following command:
+[color=gray]
+  SELECT * 
+  FROM lobby, security  
+  WHERE security.badge_number = lobby.badge_number
+[/color]
+
+Note: The fields shown are from both the lobby and security tables.
+
+Recall: The Security table has 151 rows but only 10 that satisfy the join condition."
+text = "The information in this section provides an overview of what a database is, a brief history of databases, and instructions on how to start and play the IDS detective game. In the game, you will be given a problem and a series of clues about how to solve the problem using SQL queries. The queries are run against a preinstalled database and get progressively more complex as the game proceeds. Answers are provided at the end of this section.
+
+Play the SQLiteDetective Game to help you get used to the Informix SQL language and to familiarize yourself with the dbaccess SQL tool. And oh yes, to have fun!
+
+What is a Database?
+
+A database is a collection of data (values) stored in tables, where each table consists of columns (fields) and rows (records)
+
+A database can be compared to a filing cabinet:
+* Database = filing cabinet
+* Table = file folder within the cabinet
+* Value = data stored in each cell of a spreadsheet of rows (records) and columns (fields) within the file folder
+
+Both the filing cabinet and database provide you with a way to manage and organize data so that it can be quickly retrieved. However, because the database is automated it shortens the time required to search for data, sort data, add to the data, delete from the data, and edit the data.
+
+With a relational database, such as IBM® Informix Dynamic Server, data is organized and accessed according to relationships defined between data items within the various tables. Data in the tables can be managed using the SQL (Structured Query Language) programming language.
+
+The Apple iPod is an example of a database. The Apple iPod uses a database to store all of your Music, Photos, etc.:
+* Database: Entire Music Folder
+* Tables: Artist Folders (grouped by artist)
+* Values: Album Names, Song Names, etc.
+
+The History of Databases
+
+* 1970 - IBM invents the database E. F. Codd of IBM Research publishes a paper entitled “A Relational Model of Data for Large Shared Data Banks,” leading to a new way for computers to manage information.
+* 1974 - IBM invents the database programming language SEQUEL (or SQL for short).
+* Don Chamberlin and Ray Boyce publish \"SEQUEL: A Structured English Query Language.\"
+* 1970 to the present - IBM offers a complete family of relational database management systems (RDBMS) software
+  Databases are used across all industries to manage everything from your credit card use, to bank accounts, to car insurance, to store purchases.
+
+Playing the IDS Detective Game
+
+Today you are going to learn about database technology by playing a fun and interactive game called “The IDS Detective Game.” This game will enable you to:
+
+* Understand how database data is stored and to gain an understanding of database concepts such as tables, rows (records), columns (fields), and values
+* Learn about relational databases and table joins
+* Gain a working knowledge of some of the primary SQL statements:
+  * SELECT
+  * UPDATE
+  * INSERT
+  * DELETE
+
+The IDS Detective Game consists of four tables:
+* employee table stores information about each employee such as their employee number, name, manager, office number, phone number, and badge number, and so on.
+* security table stores information as to when each employee or visitor badged in and out of the building (date and time).
+* lobby table stores the badge number assigned to each visitor by name.
+* hardware table stores the serial number and type number for every computer along with its location and the ID of the employee who is its primary user.
+
+Relationships between tables in a relational database are established using keys. The relationships defined between the tables of the IDS Detective Game are shown in the diagram. Arrows indicate the fields that have keys associated with them and the relationships that were defined between the tables. You will need to use these keys when joining the tables.
+This image shows the four tables and the relationships between them.
+
+Instructions
+
+Tips
+* Note the format of data in the tables
+  * gender field contains a single uppercase letter (M or F)
+  * hair_colour field contains lowercase entries only (brown, black, blonde, or red)
+  * restricted_access field contains a single uppercase letter (Y or N)
+  * sign_out_time and sign_in_time fields use a 24-hour format (e.g., 14:00:00)
+  * sign_out_date field uses year-month–day format (e.g., 2007-11-07)
+* The * in place of the column name(s) of the SQL query is equal to identifying all column names
+
+  SELECT *
+  FROM lobby
+
+The above query selects all columns from the lobby table.
+* AND is used to create compound conditions in a SELECT statement
+
+  SELECT * 
+  FROM employee 
+  WHERE employee.manager_id = ‘278354' AND employee.gender = ‘M'
+
+
+The Employee Table
+In the employee table, the columns (or fields) are: employee_id, first_name, last_name, location, manager_id, extension, gender, hair_colour, badge_number, restricted_access.
+
+The Security Table
+In the security table, the columns (or fields) are: badge_number, sign_out_date, sign_out_time, sign_in_time.
+
+The Lobby Table
+In the lobby table, the columns (or fields) are: first_name, last_name, badge_number.
+
+The hardware table
+In the hardware table, the columns (or fields) are: employee_id, location, hardware_tn, hardware_sn.
+
+SQL Statements
+The language of relational database technology is the Structured Query Language (SQL). Invented by IBM in the 1970s, the SQL language continues to evolve and is the only way to access relational database data.
+
+This tutorial will introduce you to the following primary SQL statements:
+* SELECT - queries data from one or more tables
+* UPDATE - changes existing rows in a table
+* INSERT - adds data to a table
+* DELETE - removes rows from a table
+
+The following sections describe each of these SQL statements so you will have all of the information needed to play the IDS Detective Game.
+
+The SELECT Statement
+
+The SELECT statement is used to retrieve data. The format of this statement is:
+
+  SELECT  column name(s) 
+  FROM  table name(s) 
+  WHERE  conditions for rows to meet (if any)
+
+
+For example, to select all of the rows from the lobby table, issue the following command:
+
+  SELECT *   
+  FROM lobby
+
+
+To select all of the rows and columns from the lobby table where the visitor's badge number is greater than 62, issue the following statement:
+
+  SELECT * 
+  FROM lobby  
+  WHERE lobby.badge_number > ‘V0062' 
+
+  
+To select all of the rows and columns from the employee table where the employee reports to Claudinei Santana (hint: employee id = 278354), and the employee is male:
+
+  SELECT * 
+  FROM employee  
+  WHERE employee.manager_id = ‘278354' AND employee.gender = ‘M' 
+
+
+This image shows the output of the select statement.
+
+Note: In order to see the output in a tabular format as shown here, use the following syntax:
+
+  SELECT employee_id, first_name, last_name, location, manager_id FROM employee
+  WHERE employee.manager_id = ‘278354' AND employee.gender = ‘M'
+
+
+The SELECT statement will take any number of relational operators including: =, >, <, >=, <=, <> (not equal to) The SELECT statement can also take a number of predicates including:
+* LIKE and NOT LIKE
+* IS NULL and IS NOT NULL
+* BETWEEN and NOT BETWEEN
+* IN and NOT IN
+
+In the IDS Detective Game, you will use the BETWEEN predicate.
+
+The BETWEEN Predicate
+The BETWEEN predicate compares a single value to an inclusion range of values (that is, all values between a specified maximum value and minimum value).
+
+For example, to select all of the rows and columns from the lobby table where the visitor's badge number is between 59 and 66, issue the following statement:
+
+  SELECT * 
+  FROM lobby  
+  WHERE lobby.badge_number BETWEEN ‘V0059' AND ‘V0066' 
+
+
+The UPDATE Statement
+The UPDATE statement is used to change data in a table. With this statement, you can change the value of one or more columns for each row that satisfies the search condition of the WHERE clause. The format is:
+
+UPDATE  table name 
+SET  column name =  expression  
+WHERE  conditions for rows to meet (if any)
+
+Note: if you do not use the WHERE clause, all rows will be updated.
+
+For example, to change the first name of the visitor having badge number 58 to \"Joan\", issue the following statement:
+
+  UPDATE lobby 
+  SET first_name = 'Joan'   
+  WHERE lobby.badge_number = 'V0058'
+
+
+If you had omitted the WHERE clause on the previous SQL command and issued the following command instead, all records would have been updated:
+
+  UPDATE lobby
+  SET first_name = 'Joan'
+
+
+The INSERT Statement
+The INSERT statement is used to add data to a table. The format of this statement is:
+
+
+  INSERT INTO  tablename (column name(s))   
+  VALUES  (value(s));
+
+
+To add a visitor named “IDS Detective\" to the lobby table, issue this command:
+
+  INSERT INTO lobby (first_name, last_name, badge_number)
+  VALUES (‘IDS', 'DETECTIVE', 'V0062')
+
+
+Note: This insertion is the 11th record of the lobby table and the table now has two records with badge_number = ‘V0062'
+
+The DELETE Statement
+
+Use the DELETE statement to remove records (rows) from a table. The format is:
+
+DELETE FROM  table name  
+WHERE  conditions for rows to meet (if any)
+
+For example, to remove the record for the visitor with a last name of Detective from the lobby table, issue the following statement:
+
+  DELETE FROM lobby  
+  WHERE lobby.last_name = ‘Detective'
+
+
+Note: Following this deletion there are only 10 records in the lobby table and only one record with badge_number = ‘V0062'.
+
+Joining Tables
+The process of combining data from two or more tables is called joining tables. The columns involved in the join condition do not have to be identical; however, they must be compatible. To join the lobby table to the security table, issue the following command:
+
+  SELECT * 
+  FROM lobby, security  
+  WHERE security.badge_number = lobby.badge_number
+
+
+Note: The fields shown are from both the lobby and security tables.
+
+Recall: The Security table has 151 rows but only 10 that satisfy the join condition."
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ShowDatabaseButton" to="." method="_on_ShowDatabaseButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ShowCluesButton" to="." method="_on_ShowCluesButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/TutorialButton" to="TutorialPopup" method="popup"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/RunButton" to="." method="_run_sql"]
