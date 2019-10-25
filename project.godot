@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="SQLiteDetective"
 run/main_scene="res://Main.tscn"
+run/frame_delay_msec=15
 config/icon="res://icon.png"
 
 [display]
