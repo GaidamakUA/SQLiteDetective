@@ -1,7 +1,7 @@
 extends Node
 
 const SQLite = preload("res://bin/gdsqlite.gdns")
-var db_name = "res://data/test"
+var db_name = "user://test"
 var db = SQLite.new()
 
 onready var text_input = $VBoxContainer/MarginContainer/VBoxContainer/TextInput
