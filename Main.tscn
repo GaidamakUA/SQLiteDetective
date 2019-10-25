@@ -21,24 +21,24 @@ custom_constants/separation = 8
 [node name="TutorialButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_right = 155.0
 margin_bottom = 23.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.792157, 0.792157, 0, 1 )
 text = "Game Tutorial"
 flat = true
 
 [node name="ShowCluesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 163.0
-margin_right = 285.0
+margin_right = 230.0
 margin_bottom = 23.0
 rect_pivot_offset = Vector2( 62.7073, 12.9709 )
-text = "Show clues"
+text = "Clues"
 flat = true
 
 [node name="ShowDatabaseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 293.0
-margin_right = 558.0
+margin_left = 238.0
+margin_right = 448.0
 margin_bottom = 23.0
 rect_pivot_offset = Vector2( 62.7073, 12.9709 )
-text = "Show Database structure"
+text = "Database structure"
 flat = true
 
 [node name="AboutButton" type="Button" parent="VBoxContainer/HBoxContainer"]
