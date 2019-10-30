@@ -254,9 +254,9 @@ margin_bottom = 483.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "The information in this section provides an overview of what a database is, a brief history of databases, and instructions on how to start and play the IDS detective game. In the game, you will be given a problem and a series of clues about how to solve the problem using SQL queries. The queries are run against a preinstalled database and get progressively more complex as the game proceeds. Answers are provided at the end of this section.
+bbcode_text = "The information in this section provides an overview of what a database is, a brief history of databases, and instructions on how to start and play the SQLite detective game. In the game, you will be given a problem and a series of clues about how to solve the problem using SQL queries. The queries are run against a preinstalled database and get progressively more complex as the game proceeds. Answers are provided at the end of this section.
 
-Play the SQLiteDetective Game to help you get used to the Informix SQL language and to familiarize yourself with the [color=yellow]dbaccess[/color] SQL tool. And oh yes, to have fun!
+Play the SQLiteDetective Game to help you get used to the SQLite language and to familiarize yourself with the [color=yellow]dbaccess[/color] SQL tool. And oh yes, to have fun!
 
 [color=red]What is a Database?[/color]
 
@@ -269,7 +269,7 @@ A database can be compared to a filing cabinet:
 
 Both the filing cabinet and database provide you with a way to manage and organize data so that it can be quickly retrieved. However, because the database is automated it shortens the time required to search for data, sort data, add to the data, delete from the data, and edit the data.
 
-With a relational database, such as IBM® Informix Dynamic Server, data is organized and accessed according to relationships defined between data items within the various tables. Data in the tables can be managed using the SQL (Structured Query Language) programming language.
+With a relational database, such as SQLite, data is organized and accessed according to relationships defined between data items within the various tables. Data in the tables can be managed using the SQL (Structured Query Language) programming language.
 
 The Apple iPod is an example of a database. The Apple iPod uses a database to store all of your Music, Photos, etc.:
 * Database: Entire Music Folder
@@ -284,9 +284,9 @@ The Apple iPod is an example of a database. The Apple iPod uses a database to st
 * 1970 to the present - IBM offers a complete family of relational database management systems (RDBMS) software
   Databases are used across all industries to manage everything from your credit card use, to bank accounts, to car insurance, to store purchases.
 
-[color=red]Playing the IDS Detective Game[/color]
+[color=red]Playing the SQLite Detective Game[/color]
 
-Today you are going to learn about database technology by playing a fun and interactive game called “The IDS Detective Game.” This game will enable you to:
+Today you are going to learn about database technology by playing a fun and interactive game called “The SQLite Detective Game.” This game will enable you to:
 
 * Understand how database data is stored and to gain an understanding of database concepts such as tables, rows (records), columns (fields), and values
 * Learn about relational databases and table joins
@@ -296,13 +296,13 @@ Today you are going to learn about database technology by playing a fun and inte
   * INSERT
   * DELETE
 
-The IDS Detective Game consists of four tables:
+The SQLite Detective Game consists of four tables:
 * [color=yellow]employee[/color] table stores information about each employee such as their employee number, name, manager, office number, phone number, and badge number, and so on.
 * [color=yellow]security[/color] table stores information as to when each employee or visitor badged in and out of the building (date and time).
 * [color=yellow]lobby[/color] table stores the badge number assigned to each visitor by name.
 * [color=yellow]hardware[/color] table stores the serial number and type number for every computer along with its location and the ID of the employee who is its primary user.
 
-Relationships between tables in a relational database are established using [color=yellow]keys[/color]. The relationships defined between the tables of the IDS Detective Game are shown in the diagram. Arrows indicate the fields that have keys associated with them and the relationships that were defined between the tables. You will need to use these keys when joining the tables.
+Relationships between tables in a relational database are established using [color=yellow]keys[/color]. The relationships defined between the tables of the SQLite Detective Game are shown in the diagram. Arrows indicate the fields that have keys associated with them and the relationships that were defined between the tables. You will need to use these keys when joining the tables.
 This image shows the four tables and the relationships between them.
 
 [color=red]Instructions[/color]
@@ -348,7 +348,7 @@ This tutorial will introduce you to the following primary SQL statements:
 * INSERT - adds data to a table
 * DELETE - removes rows from a table
 
-The following sections describe each of these SQL statements so you will have all of the information needed to play the IDS Detective Game.
+The following sections describe each of these SQL statements so you will have all of the information needed to play the SQLite Detective Game.
 
 The SELECT Statement
 
@@ -393,7 +393,7 @@ The SELECT statement will take any number of relational operators including: =, 
 * [color=yellow]BETWEEN[/color] and [color=yellow]NOT BETWEEN[/color]
 * [color=yellow]IN[/color] and [color=yellow]NOT IN[/color]
 
-In the IDS Detective Game, you will use the BETWEEN predicate.
+In the SQLite Detective Game, you will use the BETWEEN predicate.
 
 [color=yellow]The BETWEEN Predicate[/color]
 The BETWEEN predicate compares a single value to an inclusion range of values (that is, all values between a specified maximum value and minimum value).
@@ -435,10 +435,10 @@ The INSERT statement is used to add data to a table. The format of this statemen
   VALUES  (value(s));
 [/color]
 
-To add a visitor named “IDS Detective\" to the lobby table, issue this command:
+To add a visitor named “SQLite Detective\" to the lobby table, issue this command:
 [color=gray]
   INSERT INTO lobby (first_name, last_name, badge_number)
-  VALUES (‘IDS', 'DETECTIVE', 'V0062')
+  VALUES (‘SQLite', 'DETECTIVE', 'V0062')
 [/color]
 
 Note: This insertion is the 11th record of the lobby table and the table now has two records with badge_number = ‘V0062'
@@ -469,9 +469,9 @@ The process of combining data from two or more tables is called joining tables. 
 Note: The fields shown are from both the lobby and security tables.
 
 Recall: The Security table has 151 rows but only 10 that satisfy the join condition."
-text = "The information in this section provides an overview of what a database is, a brief history of databases, and instructions on how to start and play the IDS detective game. In the game, you will be given a problem and a series of clues about how to solve the problem using SQL queries. The queries are run against a preinstalled database and get progressively more complex as the game proceeds. Answers are provided at the end of this section.
+text = "The information in this section provides an overview of what a database is, a brief history of databases, and instructions on how to start and play the SQLite detective game. In the game, you will be given a problem and a series of clues about how to solve the problem using SQL queries. The queries are run against a preinstalled database and get progressively more complex as the game proceeds. Answers are provided at the end of this section.
 
-Play the SQLiteDetective Game to help you get used to the Informix SQL language and to familiarize yourself with the dbaccess SQL tool. And oh yes, to have fun!
+Play the SQLiteDetective Game to help you get used to the SQLite language and to familiarize yourself with the dbaccess SQL tool. And oh yes, to have fun!
 
 What is a Database?
 
@@ -484,7 +484,7 @@ A database can be compared to a filing cabinet:
 
 Both the filing cabinet and database provide you with a way to manage and organize data so that it can be quickly retrieved. However, because the database is automated it shortens the time required to search for data, sort data, add to the data, delete from the data, and edit the data.
 
-With a relational database, such as IBM® Informix Dynamic Server, data is organized and accessed according to relationships defined between data items within the various tables. Data in the tables can be managed using the SQL (Structured Query Language) programming language.
+With a relational database, such as SQLite, data is organized and accessed according to relationships defined between data items within the various tables. Data in the tables can be managed using the SQL (Structured Query Language) programming language.
 
 The Apple iPod is an example of a database. The Apple iPod uses a database to store all of your Music, Photos, etc.:
 * Database: Entire Music Folder
@@ -499,9 +499,9 @@ The History of Databases
 * 1970 to the present - IBM offers a complete family of relational database management systems (RDBMS) software
   Databases are used across all industries to manage everything from your credit card use, to bank accounts, to car insurance, to store purchases.
 
-Playing the IDS Detective Game
+Playing the SQLite Detective Game
 
-Today you are going to learn about database technology by playing a fun and interactive game called “The IDS Detective Game.” This game will enable you to:
+Today you are going to learn about database technology by playing a fun and interactive game called “The SQLite Detective Game.” This game will enable you to:
 
 * Understand how database data is stored and to gain an understanding of database concepts such as tables, rows (records), columns (fields), and values
 * Learn about relational databases and table joins
@@ -511,13 +511,13 @@ Today you are going to learn about database technology by playing a fun and inte
   * INSERT
   * DELETE
 
-The IDS Detective Game consists of four tables:
+The SQLite Detective Game consists of four tables:
 * employee table stores information about each employee such as their employee number, name, manager, office number, phone number, and badge number, and so on.
 * security table stores information as to when each employee or visitor badged in and out of the building (date and time).
 * lobby table stores the badge number assigned to each visitor by name.
 * hardware table stores the serial number and type number for every computer along with its location and the ID of the employee who is its primary user.
 
-Relationships between tables in a relational database are established using keys. The relationships defined between the tables of the IDS Detective Game are shown in the diagram. Arrows indicate the fields that have keys associated with them and the relationships that were defined between the tables. You will need to use these keys when joining the tables.
+Relationships between tables in a relational database are established using keys. The relationships defined between the tables of the SQLite Detective Game are shown in the diagram. Arrows indicate the fields that have keys associated with them and the relationships that were defined between the tables. You will need to use these keys when joining the tables.
 This image shows the four tables and the relationships between them.
 
 Instructions
@@ -563,7 +563,7 @@ This tutorial will introduce you to the following primary SQL statements:
 * INSERT - adds data to a table
 * DELETE - removes rows from a table
 
-The following sections describe each of these SQL statements so you will have all of the information needed to play the IDS Detective Game.
+The following sections describe each of these SQL statements so you will have all of the information needed to play the SQLite Detective Game.
 
 The SELECT Statement
 
@@ -608,7 +608,7 @@ The SELECT statement will take any number of relational operators including: =, 
 * BETWEEN and NOT BETWEEN
 * IN and NOT IN
 
-In the IDS Detective Game, you will use the BETWEEN predicate.
+In the SQLite Detective Game, you will use the BETWEEN predicate.
 
 The BETWEEN Predicate
 The BETWEEN predicate compares a single value to an inclusion range of values (that is, all values between a specified maximum value and minimum value).
@@ -650,10 +650,10 @@ The INSERT statement is used to add data to a table. The format of this statemen
   VALUES  (value(s));
 
 
-To add a visitor named “IDS Detective\" to the lobby table, issue this command:
+To add a visitor named “SQLite Detective\" to the lobby table, issue this command:
 
   INSERT INTO lobby (first_name, last_name, badge_number)
-  VALUES (‘IDS', 'DETECTIVE', 'V0062')
+  VALUES (‘SQLite', 'DETECTIVE', 'V0062')
 
 
 Note: This insertion is the 11th record of the lobby table and the table now has two records with badge_number = ‘V0062'
