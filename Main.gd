@@ -95,7 +95,7 @@ func _run_sql():
 	if query_ok:
 		text_output.set_result(db.query_result)
 	else:
-		text_output.set_error()
+		text_output.set_error(db.error_message)
 	db.close_db()
 
 func _on_ShowDatabaseButton_pressed():

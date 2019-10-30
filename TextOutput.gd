@@ -19,6 +19,6 @@ func set_result(rows: Array) -> void:
 			pop()
 	pop()
 
-func set_error() -> void:
+func set_error(message: String) -> void:
 	clear()
-	add_text("SQL Error")
+	append_bbcode("[color=red]%s[/color]" % message)
