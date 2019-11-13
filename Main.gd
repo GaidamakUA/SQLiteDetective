@@ -4,7 +4,7 @@ const SQLite = preload("res://bin/gdsqlite.gdns")
 var db_name = "user://test"
 var db = SQLite.new()
 
-onready var text_input = $VBoxContainer/MarginContainer/VBoxContainer/TextInput
+onready var text_input = $VBoxContainer/MarginContainer/VBoxContainer/SqlConsole
 onready var text_output = $VBoxContainer/MarginContainer/VBoxContainer/Panel/Output
 
 func _ready():
@@ -89,7 +89,7 @@ func _input(event):
 		_run_sql()
 
 func _run_sql():
-	var text: String = text_input.text
+	var text: String = text_input.get_text()
 	db.open_db()
 	var query_ok: bool = db.query(text)
 	if query_ok:

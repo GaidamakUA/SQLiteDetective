@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/main_theme.tres" type="Theme" id=2]
-[ext_resource path="res://TextOutput.gd" type="Script" id=3]
-[ext_resource path="res://assets/database_structure.png" type="Texture" id=4]
+[ext_resource path="res://SqlConsole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TextOutput.gd" type="Script" id=4]
+[ext_resource path="res://assets/database_structure.png" type="Texture" id=5]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -67,37 +68,28 @@ margin_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="SqlConsole" parent="VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 1008.0
-margin_bottom = 17.0
-theme = ExtResource( 2 )
-text = "SQL Console"
-
-[node name="TextInput" type="TextEdit" parent="VBoxContainer/MarginContainer/VBoxContainer"]
-margin_top = 21.0
-margin_right = 1008.0
-margin_bottom = 263.0
-size_flags_vertical = 3
-theme = ExtResource( 2 )
-show_line_numbers = true
-wrap_enabled = true
+margin_bottom = 252.0
 
 [node name="RunButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
-margin_top = 267.0
+margin_top = 256.0
 margin_right = 1008.0
-margin_bottom = 290.0
+margin_bottom = 279.0
 theme = ExtResource( 2 )
 text = "Run SQL"
 
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
-margin_top = 294.0
+margin_top = 283.0
 margin_right = 1008.0
-margin_bottom = 311.0
+margin_bottom = 300.0
 theme = ExtResource( 2 )
 text = "Output"
 
 [node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer"]
-margin_top = 315.0
+margin_top = 304.0
 margin_right = 1008.0
 margin_bottom = 557.0
 size_flags_vertical = 3
@@ -111,10 +103,9 @@ size_flags_vertical = 3
 theme = ExtResource( 2 )
 bbcode_enabled = true
 selection_enabled = true
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="DatabasePopup" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -129,7 +120,7 @@ window_title = "Database"
 [node name="TextureRect" type="TextureRect" parent="DatabasePopup"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 5
 
 [node name="CluesPopup" type="WindowDialog" parent="."]
