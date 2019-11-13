@@ -79,7 +79,7 @@ margin_top = 256.0
 margin_right = 1008.0
 margin_bottom = 279.0
 theme = ExtResource( 2 )
-text = "Run SQL"
+text = "Run SQL (Ctrl + Enter)"
 
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 margin_top = 283.0

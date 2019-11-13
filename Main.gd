@@ -85,7 +85,7 @@ func load_data(db) -> void:
 		db.query(inser_command)
 
 func _input(event):
-	if event.is_action("ui_accept"):
+	if event.is_action("ui_accept") and Input.is_key_pressed(KEY_CONTROL):
 		_run_sql()
 
 func _run_sql():
